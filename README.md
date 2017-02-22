@@ -1,2 +1,4 @@
-# neighborhood_map
-Udacity_google_map_api
+# Neighborhood Map Api
+
+*Author: Wayne Ye*
+*Date: 02/22/2017*
