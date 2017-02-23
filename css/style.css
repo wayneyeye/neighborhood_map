@@ -1,10 +1,61 @@
 html{
+	font-family: monospace;
+	color: white;
 	background-color: #09540c;
 }
 body {
     box-sizing: border-box;
     margin: 0;
 }
+#header {
+	max-width: 1200px;
+	position: relative;
+	width:95%;
+	padding: 10px;
+	margin: auto;
+}
+#title {
+	display: inline-block;
+	text-align: center;
+}
+#toggle-menu{
+	display: inline-block;
+	font-size: 15px;
+	text-align: center;
+	vertical-align: middle;
+	width: 60px;
+	height: 50px;
+	position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#side-bar {
+	position: absolute;
+	right:0px;
+	top: 0px;
+	z-index: 1;
+	width:320px;
+	height: 1000px;
+	background-color: rgba(0,0,0,0.7);
+	transition: 1s;
+}
+
+button {
+	height: 40px;
+	width: 40px;
+	font-size: 18px;
+	background-color: black;
+	color:white;
+}
+.search-button {
+	width: 60px;
+	font-size: 14px;
+}
+.close-button {
+	position: absolute;
+}
+
 #map-border {
 	max-width: 1200px;
 	margin: auto;
@@ -28,9 +79,4 @@ body {
 #title {
 	font-size: 18px;
 	}
-}
-#title {
-	text-align: center;
-	color: white;
-	font-family: monospace;
 }
