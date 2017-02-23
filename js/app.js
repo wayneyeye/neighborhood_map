@@ -1,13 +1,14 @@
 //Import Data from Yelp
-console.log(data);
+var sb_data=data;
+
 //Google map
 var map;
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {
-			lat: 32.970027,
-			lng: -96.725517
+			lat: sb_data.center.latitude,
+			lng: sb_data.center.longitude
 		},
-		zoom: 13
+		zoom: 12
 	});
 }
