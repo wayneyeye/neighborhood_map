@@ -20,5 +20,7 @@ function SearchBarVM() {
         return self.filterText() ? self.fArray(): self.storeArray(); 
 	  }
 	);
+	//count of results
+	self.resultCt = ko.computed(function() {return "Number of Results: "+self.filteredArray().length;});
 }
 ko.applyBindings(new SearchBarVM());
