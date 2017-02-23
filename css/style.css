@@ -68,20 +68,28 @@ button {
 	font-size: 14px;
 }
 .close-button {
+	font-size: 30px;
 	position: absolute;
-	right:0px;
+	top:20px;
+	right:5px;
+}
+
+#filter-echo{
+	margin:0px;
+	margin-top: 10px;
+	min-height: 18px;
 }
 
 #search-box{
 	display: inline-block;
 	width:250px;
-	margin-top: 20px;
+	margin-top: 0px;
 	margin-bottom: 20px;
 }
 
 #filter-btn{
 	display: inline-block;
-	margin-top: 20px;
+	margin-top: 0px;
 	margin-bottom: 20px;
 	width:50px;
 	font-size: 12px;
