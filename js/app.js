@@ -17,9 +17,18 @@ function initMap() {
           	title: 'Starbucks!',
           	id: sb_data.businesses[i].id
         })
+        marker.addListener('click', toggleBounce);
         markers.push(marker);
         bounds.extend(markers[i].position);
 	};
 	map.fitBounds(bounds);
 }
 
+//Toggle Bouncing animation
+function toggleBounce() {
+  if (this.getAnimation() !== null) {
+    this.setAnimation(null);
+  } else {
+    this.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
