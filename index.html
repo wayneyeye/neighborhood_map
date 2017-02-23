@@ -35,7 +35,7 @@
       </thead>
       <tbody data-bind="foreach: filteredArray">
         <tr>
-        <td data-bind="text: store_address"></td>
+        <td data-bind="{text: store_address,click: $root.popMarker}"></td>
         </tr>   
       </tbody>
     </table>
