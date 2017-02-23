@@ -49,6 +49,12 @@ body {
 	opacity:0.9;
 }
 
+#side-bar-title{
+	padding-top: 30px;
+	text-align: center;
+	margin:auto;
+}
+
 button {
 	height: 40px;
 	width: 40px;
