@@ -1,4 +1,5 @@
-//animations
+//Import Data from Yelp
+var sb_data=data;
 //pops sidebar
 function popSideBar(){
 	var sidebar = document.getElementById('side-bar');

@@ -9,5 +9,4 @@ function initMap() {
 		zoom: 12
 	});
 }
-//Import Data from Yelp
-var sb_data=data;
+
