@@ -29,7 +29,7 @@ function SearchBarVM() {
 		for (var j=0;j<self.filteredArray().length;j++){
 				filteredID.push(self.filteredArray()[j].id);
 			}
-		console.log(filteredID);
+		// console.log(filteredID);
 		for (var i=0;i<markers.length;i++){
 				if (filteredID.indexOf(markers[i].id)!=-1){
 					markers[i].setMap(map);
