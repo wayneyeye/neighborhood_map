@@ -1,6 +1,5 @@
 import io
 import json, jsonpickle
-from pprint import pprint
 from yelp.client import Client
 from yelp.oauth1_authenticator import Oauth1Authenticator
 
@@ -15,7 +14,7 @@ params = {
     'lang': 'en',
     'radius_filter' : 10000,
     'category_filter' : 'coffee',
-    'limit' : 10
+    'limit' : 25
 }
 response = client.search('Richardson, TX',**params)
 response_json=jsonpickle.encode(response)
