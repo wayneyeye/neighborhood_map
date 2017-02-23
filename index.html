@@ -22,7 +22,7 @@
     <div id='side-bar'>
       <button class="close-button" onclick="hideSideBar()">-</button>
       <h2 id='side-bar-title'>Filter your results!</h2>
-      <h3 id='filter-echo' data-bind="text: filterText"></h3>
+      <h3 id='filter-echo' data-bind="text: formattedFilter"></h3>
       <input id="search-box" data-bind="textInput: filterText"/>
       <button id="filter-btn">Apply</button>
       <table id='store-list'>

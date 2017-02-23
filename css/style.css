@@ -75,6 +75,9 @@ button {
 }
 
 #filter-echo{
+	font-family: sans-serif;
+	font-size: 12px;
+	font-style: italic;
 	margin:0px;
 	margin-top: 10px;
 	min-height: 18px;
