@@ -12,9 +12,9 @@ with io.open('../secrets/config_secret.json') as cred:
 params = {
     'term': 'Starbucks',
     'lang': 'en',
-    'radius_filter' : 10000,
+    'radius_filter' : 20000,
     'category_filter' : 'coffee',
-    'limit' : 25
+    'limit' : 40
 }
 response = client.search('Richardson, TX',**params)
 response_json=jsonpickle.encode(response)

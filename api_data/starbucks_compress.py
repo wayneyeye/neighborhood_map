@@ -5,8 +5,8 @@ f1.close()
 py_data=jsonpickle.decode(raw_data)
 py_data_compressed={
 	"center": {
-      "latitude": 32.973072192608,
-      "longitude": -96.7184043
+      "lat": py_data.region.center.latitude,
+      "lng": py_data.region.center.longitude
     },
     "businesses" : []
 }
@@ -17,10 +17,12 @@ for biz in py_data.businesses:
 		"rating": biz.rating,
 		"display_phone": biz.display_phone,
 		"snippet_image_url": biz.snippet_image_url,
+		"cord": {
+			"lat": biz.location.coordinate.latitude,
+			"lng": biz.location.coordinate.longitude
+		},
 		"location": {
 			"city": biz.location.city,
-			"latitude": biz.location.coordinate.latitude,
-			"longitude": biz.location.coordinate.longitude,
 			"display_address": biz.location.display_address
 		}
 	}
