@@ -7,6 +7,7 @@ function initMap() {
 		zoom: 12
 	});
 	var image = 'img/marker.png';
+	var bounds = new google.maps.LatLngBounds();
 	for (var i =0; i < sb_data.businesses.length; i++) {
 		var marker = new google.maps.Marker({
          	position: sb_data.businesses[i].cord,
@@ -17,6 +18,8 @@ function initMap() {
           	id: sb_data.businesses[i].id
         })
         markers.push(marker);
+        bounds.extend(markers[i].position);
 	};
+	map.fitBounds(bounds);
 }
 

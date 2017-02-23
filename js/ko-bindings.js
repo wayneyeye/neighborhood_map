@@ -44,13 +44,16 @@ function SearchBarVM() {
 			filteredID.push(self.filteredArray()[j].id);
 		}
 		// console.log(filteredID);
+		var bounds = new google.maps.LatLngBounds();
 		for (var i = 0; i < markers.length; i++) {
 			if (filteredID.indexOf(markers[i].id) != -1) {
 				markers[i].setMap(map);
+				bounds.extend(markers[i].position);
 			} else {
 				markers[i].setMap(null);
 			}
 		}
+		map.fitBounds(bounds);
 	}
 }
 ko.applyBindings(new SearchBarVM());
