@@ -1,4 +1,4 @@
-# Neighborhood Map Api
+# Neighborhood Map API
 ### Find Starbucks in Your Area!
 *Author: Wayne Ye*
 *Date: 02/22/2017*
