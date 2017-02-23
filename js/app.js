@@ -26,9 +26,12 @@ function initMap() {
 
 //Toggle Bouncing animation
 function toggleBounce() {
-  if (this.getAnimation() !== null) {
-    this.setAnimation(null);
+  var self=this;
+  if (self.getAnimation() !== null) {
+    self.setAnimation(null);
   } else {
-    this.setAnimation(google.maps.Animation.BOUNCE);
+    self.setAnimation(google.maps.Animation.BOUNCE);
+    //stops after 5000ms or by a click
+    setTimeout(function(){self.setAnimation(null);},5000);
   }
 }
