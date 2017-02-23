@@ -72,6 +72,42 @@ button {
 	right:0px;
 }
 
+#search-box{
+	display: inline-block;
+	width:250px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#filter-btn{
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width:50px;
+	font-size: 12px;
+	border-color: grey;
+}
+#store-list{
+	table-layout: fixed;
+    width: 320px;
+    border: 1px solid grey;
+	text-align: left;
+}
+
+#store-list th{
+	font-weight: bold;
+	font-size: 15px;
+	color: orange;
+}
+
+#store-list td{
+	padding: 3px;
+}
+#store-list td:hover{
+	font-weight: bold;
+	color: yellow;
+}
+
 #map-border {
 	max-width: 1200px;
 	margin: auto;

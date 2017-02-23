@@ -1,6 +1,3 @@
-//Import Data from Yelp
-var sb_data=data;
-
 //Google map
 var map;
 function initMap() {
@@ -12,3 +9,5 @@ function initMap() {
 		zoom: 12
 	});
 }
+//Import Data from Yelp
+var sb_data=data;

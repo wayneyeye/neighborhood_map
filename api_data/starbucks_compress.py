@@ -13,6 +13,7 @@ py_data_compressed={
 
 for biz in py_data.businesses:
 	biz_compressed={
+		"store_address" : '-'.join(biz.location.display_address),
 		"rating": biz.rating,
 		"display_phone": biz.display_phone,
 		"snippet_image_url": biz.snippet_image_url,
