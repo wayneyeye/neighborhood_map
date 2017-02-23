@@ -19,24 +19,26 @@
     <div id='toggle-menu'>
       <button class="search-button" onclick="popSideBar()">Search</button>
     </div>
-    <div id='side-bar'>
-      <button class="close-button" onclick="hideSideBar()">-</button>
-      <h2 id='side-bar-title'>Filter your results!</h2>
-      <h3 id='filter-echo' data-bind="text: formattedFilter"></h3>
-      <input id="search-box" data-bind="textInput: filterText"/>
-      <button id="filter-btn">Apply</button>
-      <h3 id='result-count' data-bind="text: resultCt"></h3>
-      <table id='store-list'>
-        <thead><tr>
-        <th>Store Address</th>
-        </tr>
-        </thead>
-        <tbody data-bind="foreach: filteredArray">
-          <tr>
-          <td data-bind="text: store_address"></td>
-          </tr>   
-        </tbody>
-      </table>
+  </div>
+  <div id='side-bar'>
+    <button class="close-button" onclick="hideSideBar()">-</button>
+    <h2 id='side-bar-title'>Filter your results!</h2>
+    <h3 id='filter-echo' data-bind="text: formattedFilter"></h3>
+    <input id="search-box" data-bind="textInput: filterText"/>
+    <button id="filter-btn">Apply</button>
+    <h3 id='result-count' data-bind="text: resultCt"></h3>
+    <div id="result-area">
+    <table id='store-list'>
+      <thead><tr>
+      <th>Store Address</th>
+      </tr>
+      </thead>
+      <tbody data-bind="foreach: filteredArray">
+        <tr>
+        <td data-bind="text: store_address"></td>
+        </tr>   
+      </tbody>
+    </table>
     </div>
   </div>
   <div id='map-border'>

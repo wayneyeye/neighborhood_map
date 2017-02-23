@@ -36,8 +36,8 @@ body {
 	left:0px;
 	top: 0px;
 	z-index: 1;
-	width:320px;
-	height: 1000px;
+	width:360px;
+	height: 100%;
 	background-color: black;
 	opacity:0.7;
 	transition: opacity .25s ease-in-out;
@@ -82,6 +82,10 @@ button {
 	margin-top: 10px;
 }
 
+#result-area {
+	max-height: 70%;
+	overflow-y: scroll;
+}
 #result-count{
 	font-family: sans-serif;
 	font-size: 12px;
@@ -92,9 +96,9 @@ button {
 
 #search-box{
 	display: inline-block;
-	width:250px;
+	width:280px;
 	margin-top: 0px;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 }
 
 #filter-btn{
@@ -106,8 +110,9 @@ button {
 	border-color: grey;
 }
 #store-list{
+	margin: auto;
 	table-layout: fixed;
-    width: 320px;
+    width: 330px;
     border: 1px solid grey;
 	text-align: left;
 }
