@@ -26,13 +26,13 @@ body {
 	width: 60px;
 	height: 50px;
 	position: absolute;
-    right: 10px;
+    right : 10px;
     bottom: 10px;
 }
 
 #side-bar {
 	position: absolute;
-	right:0px;
+	left:0px;
 	top: 0px;
 	z-index: 1;
 	width:320px;
@@ -47,6 +47,7 @@ button {
 	font-size: 18px;
 	background-color: black;
 	color:white;
+	border-color: black;
 }
 .search-button {
 	width: 60px;
@@ -54,6 +55,7 @@ button {
 }
 .close-button {
 	position: absolute;
+	right:0px;
 }
 
 #map-border {
