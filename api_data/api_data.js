@@ -1,4 +1,4 @@
-{
+var data = {
     "businesses": [
         {
             "rating": 3.0, 
@@ -342,6 +342,22 @@
             }
         }, 
         {
+            "rating": 5.0, 
+            "snippet_image_url": "https://s3-media1.fl.yelpcdn.com/photo/DGycg__bgW-ralaTejIsQg/ms.jpg", 
+            "display_phone": "+1-214-774-9975", 
+            "location": {
+                "latitude": 32.97717, 
+                "city": "Richardson", 
+                "display_address": [
+                    "581 W Campbell Rd", 
+                    "Ste 125", 
+                    "North Dallas", 
+                    "Richardson, TX 75080"
+                ], 
+                "longitude": -96.73951
+            }
+        }, 
+        {
             "rating": 3.5, 
             "snippet_image_url": "https://s3-media2.fl.yelpcdn.com/photo/N9RRC0MdtaalCXy6JjccwQ/ms.jpg", 
             "display_phone": "+1-972-907-1578", 
@@ -354,20 +370,6 @@
                     "Richardson, TX 75080"
                 ], 
                 "longitude": -96.7161910185706
-            }
-        }, 
-        {
-            "rating": 5.0, 
-            "snippet_image_url": "https://s3-media4.fl.yelpcdn.com/photo/afQoAthrmXJ5pIxmAw0xNA/ms.jpg", 
-            "display_phone": "+1-972-991-0100", 
-            "location": {
-                "latitude": 32.95753, 
-                "city": "Richardson", 
-                "display_address": [
-                    "532 N Interurban St", 
-                    "Richardson, TX 75081"
-                ], 
-                "longitude": -96.727165
             }
         }
     ], 

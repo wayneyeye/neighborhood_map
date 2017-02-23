@@ -27,6 +27,7 @@ for biz in py_data.businesses:
 
 # jsontext=jsonpickle.encode(py_data_compressed)
 jsontext_fmt=json.dumps(py_data_compressed, indent=4, sort_keys=False)
-f2 = open('starbucks_compressed.json', 'w')
+jsontext_fmt="var data = "+jsontext_fmt
+f2 = open('api_data.js', 'w')
 f2.write(jsontext_fmt)
 f2.close()

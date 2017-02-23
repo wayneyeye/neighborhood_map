@@ -1,6 +1,5 @@
 //Import Data from Yelp
-var sb_data = JSON.parse(data);
-console.log(sb_data);
+console.log(data);
 //Google map
 var map;
 function initMap() {
