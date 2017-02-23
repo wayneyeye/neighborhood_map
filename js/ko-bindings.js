@@ -24,13 +24,19 @@ function SearchBarVM() {
 	self.resultCt = ko.computed(function() {return "Number of Results: "+self.filteredArray().length;});
 	//apply filter
 	self.applyFilter=function(){
-		console.log("Apoppo!");
-		for (var i =0;i<markers.length;i++){
-			for (var j=0;j<self.filteredArray.length;j++){
-				// if (self.filteredArray.cord[j]===markers[i])
+		// make filtered ID array and reduce complexity
+		var filteredID=[];
+		for (var j=0;j<self.filteredArray().length;j++){
+				filteredID.push(self.filteredArray()[j].id);
 			}
-		console.log(markers[i]);
-			markers[i].setMap(null);
+		console.log(filteredID);
+		for (var i=0;i<markers.length;i++){
+				if (filteredID.indexOf(markers[i].id)!=-1){
+					markers[i].setMap(map);
+				}
+				else{
+					markers[i].setMap(null);				
+				}
 		}
 	}
 
