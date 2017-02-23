@@ -7,8 +7,8 @@ body {
 }
 #map-border {
 	max-width: 1200px;
-	margin:0 auto;
-	width:100%;
+	margin: auto;
+	width:95%;
 	/*height: 100%;*/
     padding: 5px;
     background-color: white;
@@ -16,14 +16,17 @@ body {
 #map {
     width: 100%;
     /*height: 100%;*/
-    padding-top: 70%;  
+    padding-top: 72%;  
 }
 
 @media (max-width: 600px) {
 #map {
     width: 100%;
-    /*height: 100%;*/
-    padding-top: 120%;  
+    max-height: 100%;
+    padding-top: 150%;  
+	}
+#title {
+	font-size: 18px;
 	}
 }
 #title {
