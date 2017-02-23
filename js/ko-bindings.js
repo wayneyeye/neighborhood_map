@@ -1,10 +1,14 @@
 function SearchBarVM() {
 	var self = this;
+	//ob array stores store list
 	self.storeArray = ko.observableArray(sb_data['businesses']);
+	//str input from filter box
 	self.filterText = ko.observable("");
+	//formatted filter echo
 	self.formattedFilter = ko.computed(function() {
-        return self.filterText() ? "Filter = " + self.filterText() : "No Filter Applied! try Campbell, dallas, etc.";
+        return self.filterText() ? "Filter = " + self.filterText() : "No Filter Applied! Try: 75080, Campbell, dallas, etc.";
     });
+    //filtered store list
     self.filteredArray = ko.computed(function() {
     	self.fArray=new ko.observableArray();
 		self.storeArray().forEach(function(item){
@@ -16,6 +20,5 @@ function SearchBarVM() {
         return self.filterText() ? self.fArray(): self.storeArray(); 
 	  }
 	);
-	// console.log(self.storeArray);
 }
 ko.applyBindings(new SearchBarVM());
