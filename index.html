@@ -25,7 +25,7 @@
     <h2 id='side-bar-title'>Filter your results!</h2>
     <h3 id='filter-echo' data-bind="text: formattedFilter"></h3>
     <input id="search-box" data-bind="textInput: filterText"/>
-    <button id="filter-btn">Apply</button>
+    <button id="filter-btn" data-bind="click: applyFilter">Apply</button>
     <h3 id='result-count' data-bind="text: resultCt"></h3>
     <div id="result-area">
     <table id='store-list'>

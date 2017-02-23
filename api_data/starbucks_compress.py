@@ -10,9 +10,11 @@ py_data_compressed={
     },
     "businesses" : []
 }
-
+i = 0;
 for biz in py_data.businesses:
+	i=i+1;
 	biz_compressed={
+		"id": i,
 		"store_address" : '-'.join(biz.location.display_address),
 		"rating": biz.rating,
 		"display_phone": biz.display_phone,

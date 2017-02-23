@@ -22,5 +22,17 @@ function SearchBarVM() {
 	);
 	//count of results
 	self.resultCt = ko.computed(function() {return "Number of Results: "+self.filteredArray().length;});
+	//apply filter
+	self.applyFilter=function(){
+		console.log("Apoppo!");
+		for (var i =0;i<markers.length;i++){
+			for (var j=0;j<self.filteredArray.length;j++){
+				// if (self.filteredArray.cord[j]===markers[i])
+			}
+		console.log(markers[i]);
+			markers[i].setMap(null);
+		}
+	}
+
 }
 ko.applyBindings(new SearchBarVM());

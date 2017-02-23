@@ -1,5 +1,6 @@
 //Google map
 var map;
+var markers=[];
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: sb_data.center,
@@ -12,8 +13,10 @@ function initMap() {
           	map: map,
           	animation: google.maps.Animation.DROP,
           	icon: image,
-          	title: 'Starbucks!'
+          	title: 'Starbucks!',
+          	id: sb_data.businesses[i].id
         })
+        markers.push(marker);
 	};
 }
 
