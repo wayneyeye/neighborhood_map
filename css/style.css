@@ -127,6 +127,7 @@ button {
 	padding: 3px;
 }
 #store-list td:hover{
+	cursor: pointer;
 	font-weight: bold;
 	color: yellow;
 }
