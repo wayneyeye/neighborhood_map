@@ -18,6 +18,7 @@ function initMap() {
           	animation: google.maps.Animation.DROP,
           	icon: image,
           	title: 'Starbucks!',
+			position_id:sb_data.businesses[i].cord, 
           	id: sb_data.businesses[i].id
         })
         marker.addListener('click', toggleBounce);
@@ -46,7 +47,8 @@ function toggleBounce() {
 function populateInfoWindow(marker, infowindow) {
         if (infowindow.marker != marker) {
           infowindow.marker = marker;
-          // console.log(marker.title);
+          foursquareSearch(marker);
+          console.log(marker.position_id);
           infowindow.setContent('<h3 id="info-window">'+marker.title+'</h3>');
           infowindow.open(map, marker);
           infowindow.addListener('closeclick', function() {
@@ -56,7 +58,26 @@ function populateInfoWindow(marker, infowindow) {
       }
 //FoursquareSearch
 var api_token={
-	"client_id": "GF0OCZ3JIRKTYFPABTPFKE2XW4LDLBVO5L2KJGC5AQALRZKE",
-	"client_secret": "L1Y1Z2Q51GSI2ZLGOM2JXZVJDCMDI5BKXHR0V2H53E1PGPWD"
+	"v":'20170101',
+	"ll":'',
+	"client_id": 'GF0OCZ3JIRKTYFPABTPFKE2XW4LDLBVO5L2KJGC5AQALRZKE',
+	"client_secret": 'L1Y1Z2Q51GSI2ZLGOM2JXZVJDCMDI5BKXHR0V2H53E1PGPWD',
+	"oauth_token":'ODADXNKMBI1SYTAU4T4ZEY1GXJGPNCAHIZO0PK2A5INE402G'
 };
 
+function foursquareSearch(marker){
+	//use ajax to request data from foursquare
+	api_token.ll=marker.position_id.lat+','+marker.position_id.lng;
+	var urlstr='https://api.foursquare.com/v/venues/search?'+$.param(api_token);
+	$.ajax({
+		url:urlstr,
+		dataType: "json",
+		success: function(data){
+			console.log(data);
+		},
+		error: function(e){
+			console.log(e);
+		}
+	});
+
+}
