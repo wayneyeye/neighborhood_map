@@ -1,3 +1,5 @@
+//Import Data from Yelp
+var sb_data=data;
 //Google map
 var map;
 var markers=[];

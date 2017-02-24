@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-  <title>Neighborhood Map: Find the Starbucks</title>
+  <title>Neighborhood Map: Find the Starbucks!</title>
   <link href="img/x-icon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="css/style.css" rel="stylesheet">
-  <script src="api_data/api_data.js" type="text/javascript"></script>
-  <script src="js/main.js" type="text/javascript"></script>
-  <script src="js/app.js" type="text/javascript"></script>
   <script src="js/jquery.js" type="text/javascript"></script>
   <script src="js/knockout.js" type="text/javascript"></script>
+  <script src="api_data/api_data.js" type="text/javascript"></script> <!-- markers data -->
+  <script src="js/app.js" type="text/javascript"></script>
   <script async defer src="js/ko-bindings.js" type="text/javascript"></script>
 </head>
 <body>
   <div id="header">
     <h1 id='title'>Find Starbucks around me!</h1>
     <div id='toggle-menu'>
-      <button class="search-button" onclick="popSideBar()">Search</button>
+      <button class="search-button" data-bind="click:popSideBar">Search</button>
     </div>
   </div>
   <div id='side-bar'>
-    <button class="close-button" onclick="hideSideBar()">-</button>
+    <button class="close-button" data-bind="click:hideSideBar">-</button>
     <h2 id='side-bar-title'>Filter your results!</h2>
     <h3 id='filter-echo' data-bind="text: formattedFilter"></h3>
     <input id="search-box" data-bind="textInput: filterText"/>
