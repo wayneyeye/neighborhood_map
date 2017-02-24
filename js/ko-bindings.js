@@ -24,10 +24,10 @@ function SearchBarVM() {
 		return "Number of Results: " + self.filteredArray().length;
 	});
 	//click on results pops up interaction
-	self.popMarker = function(address) {
-		// console.log(address);
+	self.popMarker = function(businesses) {
+		// console.log(businesses);
 		for (var i=0;i<markers.length;i++){
-			if (address.id==markers[i].id){
+			if (businesses.id==markers[i].id){
 				if (markers[i].getAnimation() !== null) {
 					markers[i].setAnimation(null);
 				} else {
@@ -36,6 +36,15 @@ function SearchBarVM() {
 			}
 		}
 		}
+	//Display phone number
+	self.url=ko.observable();
+	self.phoneNumber=ko.observable();
+	self.displayAddress=ko.observable();
+	self.displayDetails = function(businesses){
+		self.phoneNumber("Phone Number: "+businesses.display_phone);
+		self.displayAddress("Address: "+businesses.store_address);
+	}
+
 		//apply filter
 	self.applyFilter = function() {
 		// make filtered ID array and reduce complexity

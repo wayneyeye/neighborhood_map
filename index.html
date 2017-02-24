@@ -9,8 +9,8 @@
   <script src="api_data/api_data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/jquery.js"></script>
-  <script src="js/knockout.js"></script>
+  <script async defer src="js/jquery.js"></script>
+  <script async defer src="js/knockout.js"></script>
   <script async defer src="js/ko-bindings.js"></script>
 </head>
 <body>
@@ -27,18 +27,23 @@
     <input id="search-box" data-bind="textInput: filterText"/>
     <button id="filter-btn" data-bind="click: applyFilter">Apply</button>
     <h3 id='result-count' data-bind="text: resultCt"></h3>
+    <h3 id='detail-info' data-bind="text: phoneNumber"></h3>
+    <h3 id='detail-info' data-bind="text: displayAddress"></h3>
+    <div id="result-list">
+    <h3 id="table-head">Store List</h3>
     <div id="result-area">
     <table id='store-list'>
       <thead><tr>
-      <th>Store Address</th>
+      <th></th>
       </tr>
       </thead>
       <tbody data-bind="foreach: filteredArray">
         <tr>
-        <td data-bind="{text: store_address,click: $root.popMarker}"></td>
+        <td data-bind="{text: store_address,click: $root.popMarker,click:$root.displayDetails}"></td>
         </tr>   
       </tbody>
     </table>
+    </div>
     </div>
   </div>
   <div id='map-border'>
