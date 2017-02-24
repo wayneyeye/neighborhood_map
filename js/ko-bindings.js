@@ -36,13 +36,14 @@ function SearchBarVM() {
 			}
 		}
 		}
-	//Display phone number
+	//Display details
 	self.url=ko.observable();
 	self.phoneNumber=ko.observable();
 	self.displayAddress=ko.observable();
 	self.displayDetails = function(businesses){
 		self.phoneNumber("Phone Number: "+businesses.display_phone);
 		self.displayAddress("Address: "+businesses.store_address);
+		self.popMarker(businesses);
 	}
 
 		//apply filter
