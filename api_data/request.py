@@ -12,7 +12,7 @@ with io.open('../secrets/config_secret.json') as cred:
 params = {
     'term': 'Starbucks',
     'lang': 'en',
-    'radius_filter' : 20000,
+    'radius_filter' : 30000,
     'category_filter' : 'coffee',
     'limit' : 40
 }
