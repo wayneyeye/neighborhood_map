@@ -111,6 +111,11 @@ button {
 	margin-bottom: 10px;
 	color:yellow;
 }
+#author-info{
+	text-align: center;
+	font-style: italic;
+	color: grey;
+}
 
 #search-box{
 	display: inline-block;
