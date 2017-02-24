@@ -48,7 +48,7 @@ function populateInfoWindow(marker, infowindow) {
         if (infowindow.marker != marker) {
           infowindow.marker = marker;
           foursquareSearch(marker);
-          console.log(marker.position_id);
+          // console.log(marker.position_id);
           infowindow.setContent('<h3 id="info-window">'+marker.title+'</h3>');
           infowindow.open(map, marker);
           infowindow.addListener('closeclick', function() {
@@ -68,7 +68,7 @@ var api_token={
 function foursquareSearch(marker){
 	//use ajax to request data from foursquare
 	api_token.ll=marker.position_id.lat+','+marker.position_id.lng;
-	var urlstr='https://api.foursquare.com/v/venues/search?'+$.param(api_token);
+	var urlstr='https://api.foursquare.com/v2/venues/search?'+$.param(api_token);
 	$.ajax({
 		url:urlstr,
 		dataType: "json",
