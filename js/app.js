@@ -52,3 +52,9 @@ function populateInfoWindow(marker, infowindow) {
           });
         }
       }
+//FoursquareSearch
+var api_token={
+	"client_id": "GF0OCZ3JIRKTYFPABTPFKE2XW4LDLBVO5L2KJGC5AQALRZKE",
+	"client_secret": "L1Y1Z2Q51GSI2ZLGOM2JXZVJDCMDI5BKXHR0V2H53E1PGPWD"
+};
+
