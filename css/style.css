@@ -188,3 +188,13 @@ button {
 #info-window {
 	color:black;
 }
+
+#info-list{
+	color:black;
+	font-weight: bold;
+}
+
+#bad-connection{
+	display: block;
+	margin:auto;
+}

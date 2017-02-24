@@ -44,12 +44,13 @@ function toggleBounce() {
 }
 
 //Infowindow
+displayStr='';
 function populateInfoWindow(marker, infowindow) {
         if (infowindow.marker != marker) {
           infowindow.marker = marker;
-          foursquareSearch(marker);
-          // console.log(marker.position_id);
-          infowindow.setContent('<h3 id="info-window">'+marker.title+'</h3>');
+          foursquareSearch(marker,infowindow);
+          // console.log(displayStr);
+          // infowindow.setContent(displayStr);
           infowindow.open(map, marker);
           infowindow.addListener('closeclick', function() {
             infowindow.marker = null;
@@ -65,7 +66,7 @@ var api_token={
 	"oauth_token":'ODADXNKMBI1SYTAU4T4ZEY1GXJGPNCAHIZO0PK2A5INE402G'
 };
 
-function foursquareSearch(marker){
+function foursquareSearch(marker,infowindow){
 	//use ajax to request data from foursquare
 	api_token.ll=marker.position_id.lat+','+marker.position_id.lng;
 	var urlstr='https://api.foursquare.com/v2/venues/search?'+$.param(api_token);
@@ -73,10 +74,27 @@ function foursquareSearch(marker){
 		url:urlstr,
 		dataType: "json",
 		success: function(data){
-			console.log(data);
+			// console.log(data);
+			var venues=data.response.venues;
+			// console.log(venues);
+			displayStr='';//reset display Values
+			displayStr=displayStr+'<h3 id="info-window">Interesting Places Around This Starbucks</h3>';
+			displayStr=displayStr+'<ol id="info-list">';
+			for(var i=0;i<=Math.min(venues.length, 7);i++){
+				if (venues[i].hasOwnProperty("url")&&venues[i].url!=''){
+				displayStr=displayStr+'<li><a href="'+venues[i].url+'">'+venues[i].name+'</a></li>';				
+				}
+				else{
+				displayStr=displayStr+'<li>'+venues[i].name+'</li>';								
+				}
+			};
+			displayStr=displayStr+'</ol>';
+			infowindow.setContent(displayStr);
 		},
 		error: function(e){
-			console.log(e);
+			displayStr=displayStr+'<h3 id="info-window">Sorry, there might be an error</h3>';
+			displayStr=displayStr+'<img id="bad-connection" src="img/sad.jpg">';
+			infowindow.setContent(displayStr);
 		}
 	});
 
