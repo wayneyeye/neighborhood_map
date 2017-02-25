@@ -1,7 +1,7 @@
 function SearchBarVM() {
 	var self = this;
 	//ob array stores store list
-	self.storeArray = ko.observableArray(sb_data['businesses']);
+	self.storeArray = ko.observableArray(sb_data.businesses);
 	//str input from filter box
 	self.filterText = ko.observable("");
 	//formatted filter echo
@@ -16,7 +16,7 @@ function SearchBarVM() {
 			if (item.store_address.toLowerCase().search(self.filterText().toLowerCase()) != -1) {
 				self.fArray.push(item);
 			}
-		})
+		});
 		return self.filterText() ? self.fArray() : self.storeArray();
 	});
 	//count of results
@@ -35,7 +35,7 @@ function SearchBarVM() {
 				}
 			}
 		}
-		}
+		};
 	//Display details
 	self.url=ko.observable();
 	self.phoneNumber=ko.observable();
@@ -50,7 +50,7 @@ function SearchBarVM() {
 				populateInfoWindow(markers[i], infowindow);
 			}
 		}
-	}
+	};
 
 		//apply filter
 	self.applyFilter = function() {
@@ -70,26 +70,26 @@ function SearchBarVM() {
 			}
 		}
 		map.fitBounds(bounds);
-	}
+	};
 	//Other Animations
 	//pops sidebar
 	self.popSideBar=function(){
 		var sidebar = document.getElementById('side-bar');
 		sidebar.style.display='block';
-		var search = document.getElementById('toggle-menu')
+		var search = document.getElementById('toggle-menu');
 		search.style.display='none';
-		var title = document.getElementById('title')
+		var title = document.getElementById('title');
 		title.style.opacity=0;
-	}
+	};
 	//hides sidebar
 	self.hideSideBar=function(){
 		var sidebar = document.getElementById('side-bar');
 		sidebar.style.display='none';
-		var search = document.getElementById('toggle-menu')
+		var search = document.getElementById('toggle-menu');
 		search.style.display='block';
-		var title = document.getElementById('title')
+		var title = document.getElementById('title');
 		title.style.opacity=1;
-	}
+	};
 }
 ko.applyBindings(new SearchBarVM());
 

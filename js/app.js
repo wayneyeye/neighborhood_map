@@ -1,10 +1,10 @@
 //Import Data from Yelp
 var sb_data=data;
 //Init Google map with error handling
-var timer=setTimeout(function(){
+function onError(){
 	document.getElementById('map').style.padding=0;
 	document.getElementById('map').innerHTML='<h2 id="map-error">Error occurs when loading Google Map</h2>'+'<img id="bad-connection" src="img/sad.jpg">';
-},5000);//The DOM will display a warning text after 5000ms
+}//The DOM will display a warning text
 //Google map
 var map;
 var markers=[];
@@ -18,6 +18,9 @@ function initMap() {
 	var bounds = new google.maps.LatLngBounds();
 	var largeInfowindow = new google.maps.InfoWindow();
 	infowindow=largeInfowindow;
+	var popInfoWindow=function() {
+            populateInfoWindow(this, largeInfowindow);
+          }
 	for (var i =0; i < sb_data.businesses.length; i++) {
 		var marker = new google.maps.Marker({
          	position: sb_data.businesses[i].cord,
@@ -27,16 +30,13 @@ function initMap() {
           	title: 'Starbucks!',
 			position_id:sb_data.businesses[i].cord, 
           	id: sb_data.businesses[i].id
-        })
+        });
         marker.addListener('click', toggleBounce);
-        marker.addListener('click', function() {
-            populateInfoWindow(this, largeInfowindow);
-          });
+        marker.addListener('click', popInfoWindow);
         markers.push(marker);
         bounds.extend(markers[i].position);
-	};
+	}
 	map.fitBounds(bounds);
-	clearTimeout(timer);//clears the timer once loaded
 }
 
 //Toggle Bouncing animation
@@ -89,13 +89,13 @@ function foursquareSearch(marker,infowindow){
 			displayStr=displayStr+'<h3 id="info-window">Interesting Places Around This Starbucks</h3>';
 			displayStr=displayStr+'<ol id="info-list">';
 			for(var i=0;i<=Math.min(venues.length, 7);i++){
-				if (venues[i].hasOwnProperty("url")&&venues[i].url!=''){
+				if (venues[i].hasOwnProperty("url")&&venues[i].url!==''){
 				displayStr=displayStr+'<li><a href="'+venues[i].url+'">'+venues[i].name+'</a></li>';				
 				}
 				else{
 				displayStr=displayStr+'<li>'+venues[i].name+'</li>';								
 				}
-			};
+			}
 			displayStr=displayStr+'</ol>';
 			displayStr=displayStr+'<h5 id="foursquare-credit">Powered by Foursquare</h5>';
 			infowindow.setContent(displayStr);
