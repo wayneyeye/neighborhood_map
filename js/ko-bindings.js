@@ -44,6 +44,12 @@ function SearchBarVM() {
 		self.phoneNumber("Phone Number: "+businesses.display_phone);
 		self.displayAddress("Address: "+businesses.store_address);
 		self.popMarker(businesses);
+		//pop up the infowindow here too
+		for (var i=0;i<markers.length;i++){
+			if (businesses.id==markers[i].id){
+				populateInfoWindow(markers[i], infowindow);
+			}
+		}
 	}
 
 		//apply filter

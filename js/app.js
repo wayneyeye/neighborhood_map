@@ -3,6 +3,7 @@ var sb_data=data;
 //Google map
 var map;
 var markers=[];
+var infowindow;
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: sb_data.center,
@@ -11,6 +12,7 @@ function initMap() {
 	var image = 'img/marker.png';
 	var bounds = new google.maps.LatLngBounds();
 	var largeInfowindow = new google.maps.InfoWindow();
+	infowindow=largeInfowindow;
 	for (var i =0; i < sb_data.businesses.length; i++) {
 		var marker = new google.maps.Marker({
          	position: sb_data.businesses[i].cord,
