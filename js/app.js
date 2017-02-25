@@ -97,6 +97,7 @@ function foursquareSearch(marker,infowindow){
 				}
 			};
 			displayStr=displayStr+'</ol>';
+			displayStr=displayStr+'<h5 id="foursquare-credit">Powered by Foursquare</h5>';
 			infowindow.setContent(displayStr);
 		},
 		error: function(e){

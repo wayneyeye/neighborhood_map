@@ -196,6 +196,11 @@ button {
 	font-weight: bold;
 }
 
+#foursquare-credit{
+	color:grey;
+	text-align: center;
+}
+
 #bad-connection{
 	display: block;
 	margin:auto;
