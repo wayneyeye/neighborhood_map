@@ -1,5 +1,10 @@
 //Import Data from Yelp
 var sb_data=data;
+//Init Google map with error handling
+var timer=setTimeout(function(){
+	document.getElementById('map').style.padding=0;
+	document.getElementById('map').innerHTML='<h2 id="map-error">Error occurs when loading Google Map</h2>'+'<img id="bad-connection" src="img/sad.jpg">';
+},5000);//The DOM will display a warning text after 5000ms
 //Google map
 var map;
 var markers=[];
@@ -31,6 +36,7 @@ function initMap() {
         bounds.extend(markers[i].position);
 	};
 	map.fitBounds(bounds);
+	clearTimeout(timer);//clears the timer once loaded
 }
 
 //Toggle Bouncing animation

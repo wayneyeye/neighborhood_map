@@ -18,6 +18,8 @@ body {
 	display: inline-block;
 	text-align: center;
 }
+
+
 #toggle-menu{
 	display: inline-block;
 	font-size: 15px;
@@ -197,4 +199,8 @@ button {
 #bad-connection{
 	display: block;
 	margin:auto;
+}
+
+#map-error{
+	color:red;
 }
